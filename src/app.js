@@ -1,11 +1,13 @@
 import express  from "express";
 import authorsRouter from './routes/authors.routes.js'
+import connectionRouter from './routes/connection.routes.js'
 // import connectionRouter from './routes/connection.routes.js'
 //importar las variables de entorno
 import './config.js'
 const app=express()
 app.use(express.json())
 app.use('/api',authorsRouter)
+app.use('/api',connectionRouter)
 // app.use(connectionRouter)
 //MANEJO DE ERRORES CUANDO LA RUTA NO ES ENCONTRADA!
 app.use((req,res,next)=>{

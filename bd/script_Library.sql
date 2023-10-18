@@ -9,9 +9,6 @@ CREATE TABLE `authors`  (
   PRIMARY KEY (`author_id`)
 );
 
-INSERT INTO authors VALUES(0,'Raul','COL');
-
-
 CREATE TABLE `books` (
   `book_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `author_id` int(10) unsigned DEFAULT NULL,
@@ -34,9 +31,8 @@ CREATE TABLE `clients` (
   `gender` enum('M','F') DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`client_id`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`client_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `operations` (
   `operation_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
